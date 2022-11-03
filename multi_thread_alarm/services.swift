@@ -8,6 +8,43 @@
 import Foundation
 
 class Serivces {
+    ///
+    func timeThread(completion: @escaping () -> Void, min: Int) {
+        
+        // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
+        DispatchQueue.global().async {
+            for index in 0..<min {
+                Thread.sleep(forTimeInterval: 0.2)
+                print(index)
+            }
+            
+            // uilable finishLable은 반드시 mainThread에서 변경되어야 하기 때문에
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+        
+    }
+    
+    func intervalThread(completion: @escaping () -> Void, interval: Double) {
+        
+        // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
+        DispatchQueue.global().async {
+            for index in 0..<10 {
+                Thread.sleep(forTimeInterval: 0.2)
+                print(index)
+            }
+            
+            // uilable finishLable은 반드시 mainThread에서 변경되어야 하기 때문에
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+        
+    }
+    
+    ///
+    
     // closure가 들어간 func을 만들려면 안에 closure를 넣어야 함(closure기본형: () -> Void)
     func simpleClosureInMain(completion: () -> Void) {
         
@@ -24,7 +61,7 @@ class Serivces {
         completion()
     }
 
-    func simpleClosureInDivideThread(completion: @escaping () -> Void) {
+    func simpleClosureInDivideThread(completion: @escaping () -> Void,) {
         
         // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
         DispatchQueue.global().async {
