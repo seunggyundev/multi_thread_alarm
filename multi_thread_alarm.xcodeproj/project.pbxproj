@@ -14,6 +14,9 @@
 		D03BF97C29143F5300954AEE /* multi_thread_alarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF97B29143F5300954AEE /* multi_thread_alarmTests.swift */; };
 		D03BF98629143F5300954AEE /* multi_thread_alarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF98529143F5300954AEE /* multi_thread_alarmUITests.swift */; };
 		D03BF98829143F5300954AEE /* multi_thread_alarmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF98729143F5300954AEE /* multi_thread_alarmUITestsLaunchTests.swift */; };
+		D03BF99529143F8D00954AEE /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF99429143F8D00954AEE /* CircularProgressBarView.swift */; };
+		D03BF99929143FE700954AEE /* CircularProgressBarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF99829143FE700954AEE /* CircularProgressBarProgressView.swift */; };
+		D03BF99B291440EB00954AEE /* services.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF99A291440EB00954AEE /* services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		D03BF98129143F5300954AEE /* multi_thread_alarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = multi_thread_alarmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03BF98529143F5300954AEE /* multi_thread_alarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multi_thread_alarmUITests.swift; sourceTree = "<group>"; };
 		D03BF98729143F5300954AEE /* multi_thread_alarmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multi_thread_alarmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D03BF99429143F8D00954AEE /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		D03BF99829143FE700954AEE /* CircularProgressBarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarProgressView.swift; sourceTree = "<group>"; };
+		D03BF99A291440EB00954AEE /* services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				D03BF96C29143F5200954AEE /* ContentView.swift */,
 				D03BF96E29143F5300954AEE /* Assets.xcassets */,
 				D03BF97029143F5300954AEE /* Preview Content */,
+				D03BF99429143F8D00954AEE /* CircularProgressBarView.swift */,
+				D03BF99829143FE700954AEE /* CircularProgressBarProgressView.swift */,
+				D03BF99A291440EB00954AEE /* services.swift */,
 			);
 			path = multi_thread_alarm;
 			sourceTree = "<group>";
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03BF99B291440EB00954AEE /* services.swift in Sources */,
+				D03BF99929143FE700954AEE /* CircularProgressBarProgressView.swift in Sources */,
 				D03BF96D29143F5200954AEE /* ContentView.swift in Sources */,
+				D03BF99529143F8D00954AEE /* CircularProgressBarView.swift in Sources */,
 				D03BF96B29143F5200954AEE /* multi_thread_alarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
