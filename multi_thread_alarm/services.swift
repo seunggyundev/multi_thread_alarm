@@ -20,11 +20,6 @@ class Serivces {
         }
     }
     
-    
-    
-    
-    
-    
     func firstBoxThread(completion: @escaping () -> Void, sec: Int, interval: Double) {
         
         // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
@@ -51,23 +46,6 @@ class Serivces {
                 print(index)
             }
         }
-    }
-    
-    func intervalThread(completion: @escaping () -> Void, interval: Double) {
-        
-        // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
-        DispatchQueue.global().async {
-            for index in 0..<10 {
-                Thread.sleep(forTimeInterval: 0.2)
-                print(index)
-            }
-            
-            // uilable finishLable은 반드시 mainThread에서 변경되어야 하기 때문에
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
-        
     }
     
     ///
