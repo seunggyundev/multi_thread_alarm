@@ -9,21 +9,48 @@ import Foundation
 
 class Serivces {
     ///
-    func timeThread(completion: @escaping () -> Void, min: Int) {
+    let firstBoxQue = DispatchQueue(label: "firstBoxQue")
+    let secondBoxQue = DispatchQueue(label: "secondBoxQue")
+    let dispatchGroup = DispatchGroup()
+    
+    func groupDispathQueue(completion: @escaping () -> Void) {
+        // queue: main Thread에서 작동되도록 해뒀음
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            completion()
+        }
+    }
+    
+    
+    
+    
+    
+    
+    func firstBoxThread(completion: @escaping () -> Void, sec: Int, interval: Double) {
         
         // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
-        DispatchQueue.global().async {
-            for index in 0..<min {
-                Thread.sleep(forTimeInterval: 0.2)
+        firstBoxQue.async(group: dispatchGroup) {
+            for index in 0..<sec {
+                Thread.sleep(forTimeInterval: interval)
+                DispatchQueue.main.async {
+                    completion()
+                }
                 print(index)
             }
-            
-            // uilable finishLable은 반드시 mainThread에서 변경되어야 하기 때문에
-            DispatchQueue.main.async {
-                completion()
+        }
+    }
+    
+    func secondBoxThread(completion: @escaping () -> Void, sec: Int, interval: Double) {
+        
+        // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
+        secondBoxQue.async(group: dispatchGroup) {
+            for index in 0..<sec {
+                Thread.sleep(forTimeInterval: interval)
+                DispatchQueue.main.async {
+                    completion()
+                }
+                print(index)
             }
         }
-        
     }
     
     func intervalThread(completion: @escaping () -> Void, interval: Double) {
@@ -61,7 +88,7 @@ class Serivces {
         completion()
     }
 
-    func simpleClosureInDivideThread(completion: @escaping () -> Void,) {
+    func simpleClosureInDivideThread(completion: @escaping () -> Void) {
         
         // 여기서의 Thread는 main Thread와 별개로 새로운 작업자(Thread)에게 작업을 맡긴 것
         DispatchQueue.global().async {
