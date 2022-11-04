@@ -179,5 +179,39 @@ class Serivces {
             }
         }
     }
+    
+        // deadLock : 상대 작업이 끝날 때까지 서로 계속 기다리는 상태
+        // sync를 쓸 일이 있다면 deadLock을 꼭 기억하고 판단해라
+        func deadLockExam() {
+            let que1 = DispatchQueue(label: "q1")
+            
+            que1.sync {
+                // [1]
+                for index in 0..<10 {
+                    Thread.sleep(forTimeInterval: 0.2)
+                    print(index)
+                }
+                
+                // deadlock
+                // 위의 que1은 [1]~[2]까지 진행되어야 끝나는데 밑의 que1은 위의 que1이 끝날 때 까지 계속 기다리니
+                // 영원히 끝나지 않고 서로 기다리게 되는 오류가 생기는 것
+                // sync,async 상관없이 오류가 생김
+                que1.sync {
+                    for index in 10..<20 {
+                        Thread.sleep(forTimeInterval: 0.2)
+                        print(index)
+                    }
+                }
+            // [2]
+            }
+            
+            // 위와 같은 상황으로 main Thread에 sync를 걸면 안된다
+            // 계속 실행중인 메인에 sync를 건다? -> XX
+            DispatchQueue.main.sync {
+                
+            }
+        }
+        
+        // 그렇다면 sync는 언제 쓰냐? -> 작업이 정말 중요해서 다른 작업들은 끝날 때까지 절대로 시작하면 안될 경우에 사용, 다른 Thread를 막아서까지 꼭 사용해야하는 경우인지 꼭 고민하고 검토해야한다
 }
 
