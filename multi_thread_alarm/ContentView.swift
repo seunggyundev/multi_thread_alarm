@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     let total = 6
-    @State var completed = 0
+    @State var completed = getCompleted()
+    
     let lineWidth: CGFloat = 8
     let service = Serivces()
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -33,6 +34,7 @@ struct ContentView: View {
                 withAnimation {
                     guard completed < total else {
                         completed = 0
+                        saveCompleted(completed: completed)
                         return
                     }
                     service.firstBoxThread(completion: {
@@ -47,6 +49,7 @@ struct ContentView: View {
                     
                     service.groupDispathQueue(completion: {
                         completed += 1
+                        saveCompleted(completed: completed)
                     })
         
                 }

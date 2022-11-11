@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D032EB74291EB41D0088F4AD /* userDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032EB73291EB41D0088F4AD /* userDefault.swift */; };
 		D03BF96B29143F5200954AEE /* multi_thread_alarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF96A29143F5200954AEE /* multi_thread_alarmApp.swift */; };
 		D03BF96D29143F5200954AEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BF96C29143F5200954AEE /* ContentView.swift */; };
 		D03BF96F29143F5300954AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03BF96E29143F5300954AEE /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D032EB73291EB41D0088F4AD /* userDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDefault.swift; sourceTree = "<group>"; };
 		D03BF96729143F5200954AEE /* multi_thread_alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = multi_thread_alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03BF96A29143F5200954AEE /* multi_thread_alarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multi_thread_alarmApp.swift; sourceTree = "<group>"; };
 		D03BF96C29143F5200954AEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D03BF99429143F8D00954AEE /* CircularProgressBarView.swift */,
 				D03BF99829143FE700954AEE /* CircularProgressBarProgressView.swift */,
 				D03BF99A291440EB00954AEE /* services.swift */,
+				D032EB73291EB41D0088F4AD /* userDefault.swift */,
 			);
 			path = multi_thread_alarm;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D032EB74291EB41D0088F4AD /* userDefault.swift in Sources */,
 				D03BF99B291440EB00954AEE /* services.swift in Sources */,
 				D03BF99929143FE700954AEE /* CircularProgressBarProgressView.swift in Sources */,
 				D03BF96D29143F5200954AEE /* ContentView.swift in Sources */,
